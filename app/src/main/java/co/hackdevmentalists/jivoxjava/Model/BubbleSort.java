@@ -23,15 +23,15 @@ public class BubbleSort implements SortingInterface {
         for(int i=0; i < N; i++){
             for(int j=1; j < (N-i); j++){
 
-                if(updatedArray[j-1] > updatedArray[j]){
-                    temp = updatedArray[j-1];
-                    updatedArray[j-1] = updatedArray[j];
-                    updatedArray[j] = temp;
+                if(inputArray[j-1] > inputArray[j]){
+                    temp = inputArray[j-1];
+                    inputArray[j-1] = inputArray[j];
+                    inputArray[j] = temp;
                 }
 
             }
         }
-        return updatedArray ;
+        return inputArray ;
     }
 
     @Override
