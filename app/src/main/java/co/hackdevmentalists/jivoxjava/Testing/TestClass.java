@@ -23,14 +23,15 @@ public class TestClass {
         BubbleSort bubbleSortInstance = new BubbleSort() ;
 
         int[] testArray = {9, 11, 5, 6, 7, 8} ;
+        int[] returnArrays ;
 
-        heapSortInstance.putInput(testArray) ;
-        heapSortInstance.performSort();
-        heapSortInstance.printSortedArray();
+        returnArrays = heapSortInstance.putInput(testArray) ;
+        returnArrays = heapSortInstance.performSort(testArray);
+        heapSortInstance.printSortedArray(returnArrays);
 
-        bubbleSortInstance.putInput(testArray) ;
-        bubbleSortInstance.performSort();
-        bubbleSortInstance.printSortedArray();
+        returnArrays = bubbleSortInstance.putInput(testArray) ;
+        bubbleSortInstance.performSort(returnArrays);
+        bubbleSortInstance.printSortedArray(returnArrays);
 
     }
 

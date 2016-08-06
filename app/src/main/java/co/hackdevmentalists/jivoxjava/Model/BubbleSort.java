@@ -9,14 +9,15 @@ public class BubbleSort implements SortingInterface {
     private static int N ;
 
     @Override
-    public void putInput(int[] inputArray) {
+    public int[] putInput(int[] inputArray) {
         updatedArray = new int[inputArray.length] ;
         updatedArray = inputArray ;
         N = updatedArray.length ;
+        return updatedArray ;
     }
 
     @Override
-    public void performSort() {
+    public int[] performSort(int[] inputArray) {
         int temp ;
 
         for(int i=0; i < N; i++){
@@ -30,11 +31,12 @@ public class BubbleSort implements SortingInterface {
 
             }
         }
+        return updatedArray ;
     }
 
     @Override
-    public void printSortedArray() {
-        for (int anUpdatedArray : updatedArray) {
+    public void printSortedArray(int[] printArray) {
+        for (int anUpdatedArray : printArray) {
             System.out.print(anUpdatedArray + " ");
         }
         System.out.println();

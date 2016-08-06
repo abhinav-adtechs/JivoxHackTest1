@@ -9,31 +9,33 @@ public class HeapSort implements SortingInterface {
     private static int N ;
 
     @Override
-    public void putInput(int[] inputArray) {
+    public int[] putInput(int[] inputArray) {
         updatedArray = new int[inputArray.length] ;
         updatedArray = inputArray ;
         N = updatedArray.length ;
+        return updatedArray ;
     }
 
     @Override
-    public void performSort() {
-        heapify(updatedArray);
+    public int[] performSort(int[] inputArray) {
+        heapify(inputArray);
         for (int i = N; i > 0; i--)
         {
-            swap(updatedArray,0, i);
+            swap(inputArray,0, i);
             N = N-1;
-            maxHeap(updatedArray, 0);
+            maxHeap(inputArray, 0);
         }
+        return inputArray ;
     }
 
-    private static void heapify(int arr[])
+    private  void heapify(int arr[])
     {
         N = arr.length-1;
         for (int i = N/2; i >= 0; i--)
             maxHeap(arr, i);
     }
 
-    private static void maxHeap(int arr[], int i)
+    private  void maxHeap(int arr[], int i)
     {
         int left = 2*i ;
         int right = 2*i + 1;
@@ -50,15 +52,15 @@ public class HeapSort implements SortingInterface {
         }
     }
 
-    private static void swap(int arr[], int i, int j){
+    public  void swap(int arr[], int i, int j){
         int tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = tmp;
     }
 
     @Override
-    public void printSortedArray() {
-        for (int anUpdatedArray : updatedArray) {
+    public void printSortedArray(int[] printableArray) {
+        for (int anUpdatedArray : printableArray) {
             System.out.print(anUpdatedArray + " ");
         }
         System.out.println();
