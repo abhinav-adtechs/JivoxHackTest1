@@ -5,9 +5,9 @@ import co.hackdevmentalists.jivoxjava.Interfaces.PriorityQueueInterface;
 
 public class PriorityQueueHeap extends HeapSort implements PriorityQueueInterface{
 
-    int[] dataArray ;
-    int[] priorityArray;
-    int arraySize ;
+    private int[] dataArray ;
+    private int[] priorityArray;
+    private int arraySize ;
 
     @Override
     public void inputPriorityValues(int[] inputArray, int[] priorityArray) {
@@ -31,14 +31,18 @@ public class PriorityQueueHeap extends HeapSort implements PriorityQueueInterfac
         arr[i] = arr[j];
         arr[j] = tmp;
 
-        /*Sorting the priority Array*/
+        /*Sorting the data Array*/
+        tmp = dataArray[i];
+        dataArray[i] = dataArray[j];
+        dataArray[j] = tmp;
 
     }
 
     @Override
     public void printPriorityQueue() {
-        super.printSortedArray(dataArray);
         System.out.println();
+        System.out.println();
+        super.printSortedArray(dataArray);
         super.printSortedArray(priorityArray);
     }
 }

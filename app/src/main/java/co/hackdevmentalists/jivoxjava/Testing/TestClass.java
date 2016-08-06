@@ -3,6 +3,7 @@ package co.hackdevmentalists.jivoxjava.Testing;
 
 import co.hackdevmentalists.jivoxjava.Model.BubbleSort;
 import co.hackdevmentalists.jivoxjava.Model.HeapSort;
+import co.hackdevmentalists.jivoxjava.Model.PriorityQueueHeap;
 
 /**
 * Interface for Sorting Algorithm
@@ -21,17 +22,23 @@ public class TestClass {
 
         HeapSort heapSortInstance = new HeapSort();
         BubbleSort bubbleSortInstance = new BubbleSort() ;
+        PriorityQueueHeap priorityQueueHeapInstance = new PriorityQueueHeap() ;
 
         int[] testArray = {9, 11, 5, 6, 7, 8} ;
+        int[] priorityTestArray = {2, 5, 1, 3, 6, 4} ;
         int[] returnArrays ;
 
         returnArrays = heapSortInstance.putInput(testArray) ;
-        returnArrays = heapSortInstance.performSort(testArray);
+        returnArrays = heapSortInstance.performSort(returnArrays);
         heapSortInstance.printSortedArray(returnArrays);
 
         returnArrays = bubbleSortInstance.putInput(testArray) ;
         bubbleSortInstance.performSort(returnArrays);
         bubbleSortInstance.printSortedArray(returnArrays);
+
+        priorityQueueHeapInstance.inputPriorityValues(testArray, priorityTestArray);
+        priorityQueueHeapInstance.sortByPriority();
+        priorityQueueHeapInstance.printPriorityQueue();
 
     }
 
